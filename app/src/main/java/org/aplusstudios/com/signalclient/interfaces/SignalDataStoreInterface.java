@@ -14,6 +14,16 @@ import org.whispersystems.libsignal.util.KeyHelper;
 import java.util.List;
 
 public class SignalDataStoreInterface implements SignalProtocolStore {
+
+    private IdentityKeyPair    identityKey        = KeyHelper.generateIdentityKeyPair();
+    private List<PreKeyRecord> oneTimePreKeys     = KeyHelper.generatePreKeys(0, 100);
+    private PreKeyRecord       lastResortKey      = oneTimePreKeys.get(0);
+    private SignedPreKeyRecord signedPreKeyRecord;
+
+    public List<PreKeyRecord> getOneTimePreKeys(){
+        return oneTimePreKeys;
+    }
+
     /**
      * Get the local client's identity key pair.
      *
@@ -245,5 +255,17 @@ public class SignalDataStoreInterface implements SignalProtocolStore {
         List<PreKeyRecord> oneTimePreKeys     = KeyHelper.generatePreKeys(0, 100);
         PreKeyRecord       lastResortKey      = oneTimePreKeys.get(0);
         SignedPreKeyRecord signedPreKeyRecord = KeyHelper.generateSignedPreKey(identityKey, 1);
+    }
+
+    public IdentityKeyPair getIdentityKey() {
+        return identityKey;
+    }
+
+    public PreKeyRecord getLastResortKey() {
+        return lastResortKey;
+    }
+
+    public SignedPreKeyRecord getSignedPreKeyRecord() {
+        return signedPreKeyRecord;
     }
 }

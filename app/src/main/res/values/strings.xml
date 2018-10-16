@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">Signal Client</string>
+    <string-array name="pref_media_download_roaming_default" />
+    <string-array name="pref_notification_privacy_entries">
+        <item>name and message</item>
+        <item>name only</item>
+        <item>no name message</item>
+    </string-array>
+
+    <string-array name="pref_notification_privacy_values">
+        <item>all</item>
+        <item>contact</item>
+        <item>none</item>
+    </string-array>
+
+    <!-- discrete MIME type (the part before the "/") -->
+    <string-array name="pref_media_download_entries">
+        <item>image</item>
+        <item>audio</item>
+        <item>video</item>
+        <item>documents</item>
+    </string-array>
+
+    <string-array name="pref_media_download_values">
+        <item>images</item>
+        <item>audio</item>
+        <item>video</item>
+        <item>documents</item>
+    </string-array>
+
+    <string-array name="pref_media_download_mobile_data_default">
+        <item>image</item>
+        <item>audio</item>
+    </string-array>
+
+    <string-array name="pref_media_download_wifi_default">
+        <item>image</item>
+        <item>audio</item>
+        <item>video</item>
+        <item>documents</item>
+    </string-array>
 </resources>
